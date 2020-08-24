@@ -1,0 +1,97 @@
+Problem Type:
+    Type: TwoPlates
+Domains:
+    Top Plate:
+        Geometry:
+            Thickness (Y): 0.4
+            Width (X): 10.0
+            Pos: 3
+        Material:
+            Thermal Conductivity X: 0.65
+            Thermal Conductivity Y: 0.65
+            Density: 1598
+            Specific Heat: 932
+        Mesh:
+            Number of Elements in X: 10
+            Number of Elements in Y: 10
+        Boundary Condition:
+            Left Edge: 
+                Models: 
+                    Convection:
+                        Temperature: 200
+            Top Edge:
+                Models: 
+                    Convection:
+                        Temperature: 210
+            Right Edge:
+                Models: 
+                    Convection:
+                        Temperature: 220
+            Bottom Edge:
+                Models:
+                    Intimate Contact:
+                        Horizontal asperity ratio: 0.45
+                        Vertical asperity ratio: 0.85
+        Initial Condition:
+            Initial Temperature: 292
+        
+    Bottom Plate:
+        Geometry:
+            Thickness (Y): 0.4
+            Width (X): 10.0
+            Pos: 1
+        Material: 
+            Thermal Conductivity X: 0.65
+            Thermal Conductivity Y: 0.65
+            Density: 1598
+            Specific Heat: 930
+        Mesh:
+            Number of Elements in X: 10
+            Number of Elements in Y: 10
+        Boundary Condition:
+            Left Edge:
+                Models: 
+                    Convection:
+                        Temperature: 300
+            Bottom Edge:
+                Models: 
+                    Convection:
+                        Temperature: 310
+            Right Edge:
+                Models: 
+                    Convection:
+                        Temperature: 320 
+            Top Edge:
+                Models:
+                    Intimate Contact:
+                        Horizontal asperity ratio: 0.45
+                        Vertical asperity ratio: 0.85
+        Initial Condition: 
+            Initial Temperature: 300
+        
+    Middle Plate:
+        Geometry:
+            Thickness (Y): 0.01
+            Width (X): 10.0
+            Pos: 2
+        Material:
+            Thermal Conductivity X: 0.65
+            Thermal Conductivity Y: 0.65
+            Density: 1598
+            Specific Heat: 931        
+        Mesh:
+            Number of Elements in X: 10
+            Number of Elements in Y: 1
+        Boundary Condition:
+            Models:
+                Heating:
+                    Input Power Density: 1000
+                Intimate Contact:
+                    Horizontal asperity ratio: 0.45
+                    Vertical asperity ratio: 0.85
+        Initial Condition:
+            Initial Temperature: 292    
+
+Simulation:
+    Step Time: 0.1
+    Number of Steps: 1000
